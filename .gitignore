@@ -1,0 +1,23 @@
+# Composer dependencies
+/vendor/
+
+# Uploads (archivos subidos por usuarios)
+/uploads/products/*
+!/uploads/products/.gitkeep
+
+# Logs
+/logs/
+
+# Environment local
+.env
+.env.local
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
