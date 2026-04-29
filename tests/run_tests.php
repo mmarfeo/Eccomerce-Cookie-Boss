@@ -844,8 +844,8 @@ $statusColor = $counts['fail'] === 0 ? '#22c55e' : ($counts['fail'] <= 3 ? '#f59
       <h6 class="fw-700 mb-2" style="color:#2d2016">Responsive / UX</h6>
       <ul class="manual-checklist">
         <li>Abrir en Chrome DevTools en modo iPhone SE (375px) y verificar que el menú, carrito y formularios no se desborden</li>
-        <li>Verificar en tablet (768px) que el catálogo pasa de 1 columna a 2</li>
-        <li>En desktop (1200px) verificar layout de 3-4 columnas en catálogo</li>
+        <li>Verificar en mobile (375px) que el catálogo muestra <strong>2 columnas</strong> (col-6); en tablet (768px) pasa a <strong>3 columnas</strong> (col-md-4); en desktop a <strong>4 columnas</strong> (col-lg-3)</li>
+        <li>En desktop (1200px) verificar layout de 4 columnas en catálogo</li>
         <li>Probar que la tabla de pedidos admin es scrolleable horizontalmente en mobile</li>
         <li>Verificar que el formulario de checkout se vea en 1 columna en mobile y 2 en desktop</li>
         <li>Verificar que los botones son suficientemente grandes para toque en mobile (min 44x44px)</li>
@@ -901,7 +901,7 @@ $statusColor = $counts['fail'] === 0 ? '#22c55e' : ($counts['fail'] <= 3 ? '#f59
 
       <h6 class="fw-700 mb-2 mt-3" style="color:#2d2016">Seguridad — Pruebas manuales</h6>
       <ul class="manual-checklist">
-        <li>Intentar 6 veces login incorrecto en /admin/login → debe bloquearse por 10 minutos</li>
+        <li>Intentar <strong>5 veces</strong> login incorrecto en /admin/login → debe bloquearse por 10 minutos (MAX_ATTEMPTS = 5)</li>
         <li>Enviar formulario de login sin el campo _csrf_token (via curl/Postman) → debe retornar HTTP 419</li>
         <li>Intentar acceder a /admin/dashboard sin sesión → redirección a /admin/login</li>
         <li>Intentar acceder a /admin/usuarios con rol "manager" (no admin) → denegado</li>

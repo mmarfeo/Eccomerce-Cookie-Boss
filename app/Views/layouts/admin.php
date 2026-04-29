@@ -13,6 +13,9 @@
 </head>
 <body>
 
+<!-- Backdrop mobile sidebar -->
+<div id="sidebarBackdrop" class="sidebar-backdrop"></div>
+
 <!-- Sidebar -->
 <aside class="admin-sidebar" id="adminSidebar">
   <div class="sidebar-brand">
@@ -143,9 +146,27 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-document.getElementById('sidebarToggle')?.addEventListener('click', () => {
-  document.getElementById('adminSidebar').classList.toggle('open');
+const adminSidebar  = document.getElementById('adminSidebar');
+const sidebarToggle = document.getElementById('sidebarToggle');
+const sidebarBackdrop = document.getElementById('sidebarBackdrop');
+
+function openSidebar() {
+  adminSidebar.classList.add('open');
+  sidebarBackdrop.classList.add('show');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeSidebar() {
+  adminSidebar.classList.remove('open');
+  sidebarBackdrop.classList.remove('show');
+  document.body.style.overflow = '';
+}
+
+sidebarToggle?.addEventListener('click', () => {
+  adminSidebar.classList.contains('open') ? closeSidebar() : openSidebar();
 });
+
+sidebarBackdrop?.addEventListener('click', closeSidebar);
 
 // Auto-slug desde nombre
 const nameInput = document.getElementById('nameInput');

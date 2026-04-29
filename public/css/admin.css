@@ -325,6 +325,21 @@ input:checked + .toggle-slider::before { transform: translateX(22px); }
 }
 .btn-admin-outline:hover { background: var(--gold); color: #fff; }
 
+/* ── Backdrop sidebar mobile ──────────────────────────────── */
+.sidebar-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.sidebar-backdrop.show {
+  display: block;
+  opacity: 1;
+}
+
 /* ── Responsive sidebar ───────────────────────────────────── */
 @media (max-width: 992px) {
   .admin-sidebar { transform: translateX(-100%); }
