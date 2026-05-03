@@ -9,7 +9,7 @@ DirectoryIndex index.php
 # ── Bloquear acceso a directorios internos ─────────────────
 <IfModule mod_rewrite.c>
     RewriteEngine On
-    RewriteBase /02-Eccomerce-Cookies/
+    RewriteBase /
 
     RewriteRule ^app/         - [F,L]
     RewriteRule ^vendor/      - [F,L]

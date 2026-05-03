@@ -3,15 +3,15 @@
 define('ROOT_PATH',   __DIR__);
 define('APP_PATH',    ROOT_PATH . '/app');
 define('UPLOAD_PATH', ROOT_PATH . '/uploads/products');
-define('UPLOAD_URL',  '/02-Eccomerce-Cookies/uploads/products');
-define('BASE_URL',    'http://localhost/02-Eccomerce-Cookies');
+define('BASE_URL',    'https://cookieboss.negociosentuciudad.com');
+define('UPLOAD_URL',  BASE_URL . '/uploads/products');
 define('PUBLIC_URL',  BASE_URL . '/public');
 
 // ── Database ────────────────────────────────────────────────
 define('DB_HOST',    'localhost');
-define('DB_NAME',    'cookie_bakery');
-define('DB_USER',    'root');
-define('DB_PASS',    '');
+define('DB_NAME',    'u374453216_cookieboss');
+define('DB_USER',    'u374453216_cookieboss');
+define('DB_PASS',    'Clavecokiesboss2026');
 define('DB_CHARSET', 'utf8mb4');
 
 // ── Mercado Pago ────────────────────────────────────────────
@@ -21,7 +21,7 @@ define('MP_ACCESS_TOKEN',   getenv('MP_ACCESS_TOKEN')   ?: 'TEST-YOUR-ACCESS-TOK
 define('MP_WEBHOOK_SECRET', getenv('MP_WEBHOOK_SECRET') ?: '');
 
 // ── App ─────────────────────────────────────────────────────
-define('APP_ENV',       'development'); // Cambiar a 'production' al deployar
+define('APP_ENV',       'production'); // producción en Hostinger
 define('APP_NAME',      'Cookie Bakery');
 define('SESSION_NAME',  'cb_sess');
 define('CSRF_TOKEN_KEY','_csrf_token');
