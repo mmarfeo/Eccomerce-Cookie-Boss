@@ -25,7 +25,7 @@ class Database
             } catch (PDOException $e) {
                 error_log('DB Connection failed: ' . $e->getMessage());
                 http_response_code(500);
-                die('Error de conexión a la base de datos. Verificá que MySQL esté corriendo y la DB exista.');
+                die('Error de conexión a la base de datos: ' . $e->getMessage());
             }
         }
         return self::$instance;
