@@ -3,8 +3,6 @@
 -- Ejecutar después de database.sql
 -- ============================================================
 
-USE cookie_bakery;
-
 -- ─── PASSWORD RESETS ────────────────────────────────────────
 CREATE TABLE IF NOT EXISTS password_resets (
     id          INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,

@@ -3,8 +3,6 @@
 -- Ejecutar después de database.sql y database_updates.sql
 -- ============================================================
 
-USE cookie_bakery;
-
 -- ─── PASSWORD para clientes (nullable = guest sigue funcionando) ──
 ALTER TABLE customers
     ADD COLUMN IF NOT EXISTS password      VARCHAR(255) NULL        AFTER notes,
