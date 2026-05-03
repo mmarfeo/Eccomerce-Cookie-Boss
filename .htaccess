@@ -1,19 +1,23 @@
-Options -Indexes
+Options -Indexes +FollowSymLinks
 DirectoryIndex index.php
 
 # ── Bloquear acceso a archivos sensibles ───────────────────
-<FilesMatch "\.(env|json|lock|sql|log|md|gitignore)$">
-    Require all denied
-</FilesMatch>
+<IfModule mod_authz_core.c>
+    <FilesMatch "\.(env|json|lock|sql|log|md|gitignore)$">
+        Require all denied
+    </FilesMatch>
+</IfModule>
 
 # ── Bloquear acceso a directorios internos ─────────────────
 <IfModule mod_rewrite.c>
     RewriteEngine On
     RewriteBase /
 
+    # Bloquear directorios sensibles
     RewriteRule ^app/         - [F,L]
     RewriteRule ^vendor/      - [F,L]
     RewriteRule ^logs/        - [F,L]
+    RewriteRule ^tests/       - [F,L]
 
     # Servir archivos y directorios existentes directamente
     RewriteCond %{REQUEST_FILENAME} !-f
